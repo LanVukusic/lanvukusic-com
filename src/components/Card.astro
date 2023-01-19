@@ -1,0 +1,40 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  i: number;
+}
+
+const { href, title, description, i } = Astro.props;
+function redirect() {
+  window.location.href = href;
+  console.log(href);
+}
+
+const ontOnClick = 'redirect("' + href + '")';
+---
+
+<div
+  onclick={ontOnClick}
+  class="xl:p-8 p-4 bg-gray-100 hover:shadow-2xl hover:opacity-95 transition-all opacity-90 cursor-pointer border-t-4 pl-2 border-gray-500"
+>
+  <div class="flex items-center ml-6">
+    <div
+      class="rounded-sm h-8 w-8 mr-4 font-bold bg-teal-800 text-white flex justify-center items-center"
+    >
+      {i}
+    </div>
+    <h3 class="alice px-2 text-4xl text-gray-800 text-lef">{title}</h3>
+  </div>
+  <p class="py-1 my-6 px-6 text-gray-500 text-justify">
+    {description}
+  </p>
+</div>
+
+<script is:inline>
+  function redirect(href) {
+    window.location.href = href;
+    console.log(href);
+  }
+</script>

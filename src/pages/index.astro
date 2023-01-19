@@ -1,0 +1,128 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <!-- hero -->
+  <div class="bg-gray-100 p-8">
+    <div class="flex-1 max-w-screen-lg flex justify-around mx-auto py-48">
+      <div class="flex flex-col">
+        <div class="flex alice xl:text-8xl md:text-6xl text-4xl">
+          <h1 class="text-teal-700 opacity-60">lanvukusic</h1>
+          <h1 class="">.com</h1>
+        </div>
+        <h2 class="alice xl:text-5xl md:text-4xl text-3xl font-bold opacity-25">
+          My front page
+        </h2>
+      </div>
+      <div
+        class="text-justify md:grid grid-cols-1 gap-4 text-white font-bold opacity-60 hidden"
+      >
+        <div class="flex items-center justify-center bg-teal-700 px-8">
+          DESIGNS
+        </div>
+        <div class="flex items-center justify-center bg-teal-700 px-8">
+          ARTICLES
+        </div>
+        <div class="flex items-center justify-center bg-teal-700 px-8">
+          SOFTWARE
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- first section -->
+  <div class="bg-gray-100">
+    <div class="bg-teal-900 w-full py-24 px-8">
+      <h2
+        class="alice text-white xl:text-6xl text-4xl opacity-70 border-b-2 pb-4"
+      >
+        Stuff
+      </h2>
+
+      <div
+        class="w-full mt-16 grid gap-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
+      >
+        <!-- entries -->
+        <Card
+          title="Tilen's blog"
+          description="Interesting blog design with funky graphics. CMS is done with sanity and deployed to Vercell and CF Pages."
+          i={1}
+          href="https://tilenletner.com"
+        />
+        <Card
+          title="Memobrain"
+          description="Memo playing bot, that uses data entropy and information gain for calculating best moves. Frontend in ChakraUI."
+          i={2}
+          href="https://memobrain.web.app/"
+        />
+        <Card
+          title="Recepti net"
+          description="Best recipe collection from my friends in Ljubljana. Built with Astro.js and Tailwind. Deployed on CF pages."
+          i={3}
+          href="https://recepti.lanvukusic.com/"
+        />
+        <Card
+          title="ButterGen"
+          description="Butterchurn vissualisations that genetically evolve when you click them. Made with Enei / Smufa"
+          i={4}
+          href="https://github.com/LanVukusic/buttergen"
+        />
+        <Card
+          title="RaspiGPS"
+          description="GO library for interfacing with Neo8 GPS receivers on RaspberryPi"
+          i={5}
+          href="https://github.com/LanVukusic/RaspiGPS"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- second section -->
+  <div class="bg-gray-200 w-full py-24 px-8 shadow-inner">
+    <h2
+      class="alice text-teal-900 text-6xl opacity-70 border-b-2 border-teal-900 pb-4"
+    >
+      Articles
+    </h2>
+    <div
+      class="w-full mt-16 grid grid-cols-3 gap-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
+    >
+      <!-- entries -->
+      <Card
+        title="Bioreactor"
+        description="An attempt at building an open source small scale bioreactor for growing microorganisms."
+        i={1}
+        href="https://bioreactor.lanvukusic.com/"
+      />
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="bg-teal-900 w-full py-24 px-8">
+      <h2 class="alice text-white text-6xl opacity-70 border-b-2 pb-4">
+        Design
+      </h2>
+
+      <div
+        class="w-full mt-16 grid grid-cols-3 gap-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
+      >
+        <!-- entries -->
+        <Card
+          title="Acoustic concert poster"
+          description="My friend had a concert and needed a poster design."
+          i={1}
+          href="https://github.com/LanVukusic/RaspiGPS"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="p-8 w-full bg-gray-200 grid gap-4 md:grid-cols-2 grid-cols-1 text-gray-600 text-center"
+  >
+    <span class="alice text-xl">Lan Vukušič</span>
+    <span class="alice text-xl">info@lanvukusic.com</span>
+  </div>
+</Layout>
