@@ -1,0 +1,30 @@
+---
+interface Nav {
+  title: string;
+  href: string;
+}
+
+const nav: Nav[] = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Cool tech",
+    href: "/tech",
+  },
+];
+---
+
+<div class="w-full flex md:justify-start shadow-xl justify-center px-8">
+  {
+    nav.map((item) => (
+      <a
+        href={item.href}
+        class="text-gray-400 hover:text-gray-900 px-3 py-2 rounded-md font-medium text-sm md:text-xl"
+      >
+        {item.title}
+      </a>
+    ))
+  }
+</div>

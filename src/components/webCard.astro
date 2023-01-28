@@ -1,0 +1,57 @@
+---
+import ogs from "open-graph-scraper";
+import Tag from "./Tag.astro";
+
+export interface Props {
+  title: string;
+  // description: string;
+  href: string;
+  tags: string[];
+  children?: any;
+}
+
+const { href, title, tags } = Astro.props;
+function redirect() {
+  window.location.href = href;
+  console.log(href);
+}
+
+const OnClick = 'redirect("' + href + '")';
+
+const og = await ogs({ url: href });
+// @ts-ignore
+const image = og.result.ogImage.url;
+---
+
+<div class="bg-gray-100 transition-all opacity-90">
+  <div
+    class="w-full h-36 bg-cover bg-center mb-2"
+    style={"background-image: url(" + image + ")"}
+  >
+  </div>
+  <div class="p-8">
+    <div class="flex items-center">
+      <h3 class="alice text-4xl text-teal-900">{title}</h3>
+    </div>
+    <div class="py-6 text-gray-700">
+      <slot />
+    </div>
+    <div class="flex">
+      {tags.map((tag) => <Tag title={tag} />)}
+    </div>
+    <div class="w-full flex justify-end">
+      <a
+        href={href}
+        class="text-teal-900 border-2 bg-white border-teal-900 px-4 py-1 hover:shadow-md rounded-sm cursor-pointer"
+        >{title}</a
+      >
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  function redirect(href) {
+    window.location.href = href;
+    console.log(href);
+  }
+</script>

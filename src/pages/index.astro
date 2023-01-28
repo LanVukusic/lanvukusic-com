@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -31,6 +32,9 @@ import Card from "../components/Card.astro";
       </div>
     </div>
   </div>
+
+  <!-- navbar -->
+  <Nav />
 
   <!-- first section -->
   <div class="bg-gray-100">
@@ -93,7 +97,7 @@ import Card from "../components/Card.astro";
       Articles
     </h2>
     <div
-      class="w-full mt-16 grid grid-cols-3 gap-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
+      class="w-full mt-16 grid gap-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
     >
       <!-- entries -->
       <Card
@@ -112,7 +116,7 @@ import Card from "../components/Card.astro";
       </h2>
 
       <div
-        class="w-full mt-16 grid grid-cols-3 gap-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
+        class="w-full mt-16 grid gap-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
       >
         <!-- entries -->
         <Card

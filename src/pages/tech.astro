@@ -1,0 +1,167 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WebCard from "../components/webCard.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <!-- hero -->
+  <div class="bg-gray-100 p-8">
+    <div class="flex-1 max-w-screen-lg flex justify-around mx-auto py-48">
+      <div class="flex flex-col">
+        <div class="flex alice xl:text-8xl md:text-6xl text-4xl">
+          <h1 class="text-teal-700 opacity-60">lanvukusic</h1>
+          <h1 class="">.com</h1>
+        </div>
+        <h2 class="alice xl:text-5xl md:text-4xl text-3xl font-bold opacity-25">
+          My front page
+        </h2>
+      </div>
+      <div
+        class="text-justify md:grid grid-cols-1 gap-4 text-white font-bold opacity-60 hidden"
+      >
+        <div class="flex items-center justify-center bg-teal-700 px-8">
+          DESIGNS
+        </div>
+        <div class="flex items-center justify-center bg-teal-700 px-8">
+          ARTICLES
+        </div>
+        <div class="flex items-center justify-center bg-teal-700 px-8">
+          SOFTWARE
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- navbar -->
+  <Nav />
+
+  <!-- special tenx -->
+  <div class="bg-gray-100">
+    <div class="bg-teal-900 w-full p-8">
+      <h2
+        class="alice text-white xl:text-6xl text-4xl opacity-70 border-b-2 my-8"
+      >
+        ... Why this?
+      </h2>
+
+      <div
+        class="grid grid-cols-1 gap-4 text-white opacity-70 text-justify md:text-xl text-md"
+      >
+        <span>
+          It happens way too often that I find some really cool new tech that I
+          want to try and share with my colleagues. It helps me, to have a place
+          to store all of the cool stuff I find.
+        </span>
+        <span>
+          I also desperately want to find a place that just displays cool new
+          stuff I can use and check it every now and then. It seemed like a good
+          idea to make a place for that.
+        </span>
+        <span>
+          I want to give a huge tenx to my friends sending some amazing ideas to
+          post here. All the love to you {"<3"}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- first section -->
+  <div class="bg-gray-100">
+    <div class="bg-gray-200 w-full py-24 px-8">
+      <h2
+        class="alice text-teal-900 xl:text-6xl text-4xl opacity-80 border-b-2 border-teal-900 pb-4"
+      >
+        Cool tech
+      </h2>
+
+      <div
+        class="w-full mt-16 grid gap-6 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
+      >
+        <!-- entries -->
+        <WebCard
+          title="Sanity"
+          href="https://www.sanity.io/"
+          tags={["Web", "CMS"]}
+        >
+          <p>
+            Great hosted CMS with a generous free tier, simple setup and good
+            enough options for more complex scenarios.
+          </p>
+          <p>
+            I used it to create <a
+              href="https://tilenletner.com"
+              class="underline text-teal-700">Tilen's blog</a
+            > and it was a breeze. Tilen also loves it since it is brain dead to
+            use and needs no tech knowledge.
+          </p>
+        </WebCard>
+        <WebCard
+          title="EdgeDB"
+          href="https://www.edgedb.com/"
+          tags={["database"]}
+        >
+          <p>
+            Interesting DB concept. I love the idea of having everything bundled
+            up in one service. Haven't tried it yet, but it looks promising.
+          </p>
+        </WebCard>
+        <WebCard
+          title="SurrealDB"
+          href="https://surrealdb.com/docs/integration/libraries/golang"
+          tags={["database", "rust"]}
+        >
+          <p>
+            Fun database concept, written in rust. It looks like it could solve
+            a lot of problems with its Neo4j abilities.
+          </p>
+          <p>
+            The idea of having a document database with pointers to other
+            documents is what it always seemed logical to me.
+          </p>
+        </WebCard>
+        <WebCard
+          title="Astro"
+          href="https://astro.build/"
+          tags={["web", "framework"]}
+        >
+          <p>
+            The easiest way to build static websites. It is a great framework I
+            am constantly using for my projects.
+          </p>
+          <p>I love it how you can deploy it to Cloudflare Pages for free.</p>
+          <p>
+            The ability to use React, Markdown rendering, Tailwind... all mixed
+            up and working seamlesly is amazing!
+          </p>
+          <p>
+            Used it to build <a href="/" class="underline">this webiste</a>, <a
+              href="/"
+              class="underline">Tilen's blog</a
+            >
+          </p> and some other projects.
+        </WebCard>
+        <WebCard
+          title="PyTorch"
+          href="https://pytorch.org/"
+          tags={["python", "Machine Learning"]}
+        >
+          <p>
+            The best way to build AI models. It's way easier than Tensorflow for
+            my needs and it does everything I need.
+          </p>
+          <p>
+            Documentation is great and in depth with a helpfull comunity as well
+          </p>
+        </WebCard>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="p-8 w-full bg-teal-900 grid gap-4 md:grid-cols-2 grid-cols-1 text-gray-200 text-center"
+  >
+    <span class="alice text-xl">Lan Vukušič</span>
+    <span class="alice text-xl">info@lanvukusic.com</span>
+  </div>
+</Layout>
